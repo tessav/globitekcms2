@@ -28,19 +28,19 @@ The following **required** functionality is completed:
   * [X]  Required: new.php
   * [X]  Required: edit.php
 
-7\. [ ]  Required: Add Data Validations
+7\. [X]  Required: Add Data Validations
   * [X]  Required: Validate that no values are left blank.
   * [X]  Required: Validate that all string values are less than 255 characters.
-  * [ ]  Required: Validate that usernames contain only the whitelisted characters.
-  * [ ]  Required: Validate that phone numbers contain only the whitelisted characters.
+  * [X]  Required: Validate that usernames contain only the whitelisted characters.
+  * [X]  Required: Validate that phone numbers contain only the whitelisted characters.
   * [X]  Required: Validate that email addresses contain only whitelisted characters.
-  * [ ]  Required: Add *at least 5* other validations of your choosing.
+  * [X]  Required: Add *at least 5* other validations of your choosing.
 
-8\. [ ]  Required: Sanitization
-  * [ ]  Required: All input and dynamic output should be sanitized.
-  * [ ]  Required: Sanitize dynamic data for URLs
-  * [ ]  Required: Sanitize dynamic data for HTML
-  * [ ]  Required: Sanitize dynamic data for SQL
+8\. [X]  Required: Sanitization
+  * [X]  Required: All input and dynamic output should be sanitized.
+  * [X]  Required: Sanitize dynamic data for URLs
+  * [X]  Required: Sanitize dynamic data for HTML
+  * [X]  Required: Sanitize dynamic data for SQL
 
 9\. [ ]  Required: Penetration Testing
   * [ ]  Required: Verify form inputs are not vulnerable to SQLI attacks.

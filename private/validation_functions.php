@@ -26,4 +26,12 @@
     return strpos($value, '@') !== false;
   }
 
+  function has_valid_phone_format($value) {
+    return preg_match('/^\(?\+?([0-9]{1,4})\)?[-\. ]?(\d{10})$/', trim($value));
+  }
+
+  function has_valid_username($value) {
+    return preg_match("/^[a-z0-9]+$/mi", trim($value));
+  }
+
 ?>

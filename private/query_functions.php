@@ -75,6 +75,12 @@
       return $errors;
     }
 
+    // Sanitize all form values
+    foreach ($state as $key=>$value) {
+      unset($state[$key]);
+      $state[$key] = mysql_real_escape_string($value);
+    }
+
     $sql = "INSERT INTO states ";
     $sql .= "(name, code, country_id) ";
     $sql .= "VALUES (";
@@ -103,6 +109,11 @@
     $errors = validate_state($state);
     if (!empty($errors)) {
       return $errors;
+    }
+    // Sanitize all form values
+    foreach ($state as $key=>$value) {
+      unset($state[$key]);
+      $state[$key] = mysql_real_escape_string($value);
     }
 
     $sql = "UPDATE states SET ";
@@ -181,6 +192,12 @@
       return $errors;
     }
 
+    // Sanitize all form values
+    foreach ($territory as $key=>$value) {
+      unset($territory[$key]);
+      $territory[$key] = mysql_real_escape_string($value);
+    }
+
     $sql = "INSERT INTO territories ";
     $sql .= "(name, position, state_id) ";
     $sql .= "VALUES (";
@@ -209,6 +226,12 @@
     $errors = validate_territory($territory);
     if (!empty($errors)) {
       return $errors;
+    }
+
+    // Sanitize all form values
+    foreach ($territory as $key=>$value) {
+      unset($territory[$key]);
+      $territory[$key] = mysql_real_escape_string($value);
     }
 
     $sql = "UPDATE territories SET ";
@@ -281,6 +304,8 @@
 
     if (is_blank($salesperson['email'])) {
       $errors[] = "Email cannot be blank.";
+    } elseif (!has_length($salesperson['email'], array('max' => 255))) {
+      $errors[] = "Email must be less than 255 characters.";
     } elseif (!has_valid_email_format($salesperson['email'])) {
       $errors[] = "Email must be a valid format.";
     }
@@ -289,6 +314,8 @@
       $errors[] = "Phone cannot be blank.";
     } elseif (!has_length($salesperson['phone'], array('max' => 255))) {
       $errors[] = "Phone must be less than 255 characters.";
+    } elseif (!has_valid_phone_format($salesperson['phone'])) {
+      $errors[] = "Phone must be in the format (+XX)XXXXXXXXXX where X is a digit.";
     }
     return $errors;
   }
@@ -301,6 +328,12 @@
     $errors = validate_salesperson($salesperson);
     if (!empty($errors)) {
       return $errors;
+    }
+
+    // Sanitize all form values
+    foreach ($salesperson as $key=>$value) {
+      unset($salesperson[$key]);
+      $salesperson[$key] = mysql_real_escape_string($value);
     }
 
     $sql = "INSERT INTO salespeople ";
@@ -332,6 +365,12 @@
     $errors = validate_salesperson($salesperson);
     if (!empty($errors)) {
       return $errors;
+    }
+
+    // Sanitize all form values
+    foreach ($salesperson as $key=>$value) {
+      unset($salesperson[$key]);
+      $salesperson[$key] = mysql_real_escape_string($value);
     }
 
     $sql = "UPDATE salespeople SET ";
@@ -412,6 +451,8 @@
       $errors[] = "Username cannot be blank.";
     } elseif (!has_length($user['username'], array('max' => 255))) {
       $errors[] = "Username must be less than 255 characters.";
+    } elseif (!has_valid_username($user['username'])) {
+      $errors[] = "Please enter an alphanumeric username.";
     }
     return $errors;
   }
@@ -426,6 +467,12 @@
       return $errors;
     }
 
+    // Sanitize all form values
+    foreach ($user as $key=>$value) {
+      unset($user[$key]);
+      $user[$key] = mysql_real_escape_string($value);
+    }
+
     $created_at = date("Y-m-d H:i:s");
     $sql = "INSERT INTO users ";
     $sql .= "(first_name, last_name, email, username, created_at) ";
@@ -434,7 +481,7 @@
     $sql .= "'" . $user['last_name'] . "',";
     $sql .= "'" . $user['email'] . "',";
     $sql .= "'" . $user['username'] . "',";
-    $sql .= "'" . $created_at . "',";
+    $sql .= "'" . $created_at . "'";
     $sql .= ");";
     // For INSERT statments, $result is just true/false
     $result = db_query($db, $sql);
@@ -457,6 +504,12 @@
     $errors = validate_user($user);
     if (!empty($errors)) {
       return $errors;
+    }
+
+    // Sanitize all form values
+    foreach ($user as $key=>$value) {
+      unset($user[$key]);
+      $user[$key] = mysql_real_escape_string($value);
     }
 
     $sql = "UPDATE users SET ";
