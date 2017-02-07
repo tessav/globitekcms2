@@ -38,18 +38,18 @@ if(!isset($_GET['id'])) {
 
 
 <div id="main-content">
-  <a href="../states/show.php?id=<?php echo $id;?>">Back to State Details</a><br />
+  <a href="../states/show.php?id=<?php echo h($id);?>">Back to State Details</a><br />
 
   <h1>New Territory</h1>
 
   <?php echo display_errors($errors); ?>
 
   <form action="new.php" method="post">
-    <input type="hidden" name="state_id" value="<?php echo $territory['state_id']; ?>" />
+    <input type="hidden" name="state_id" value="<?php echo h($territory['state_id']); ?>" />
     Name:<br />
-    <input type="text" name="name" value="<?php echo $territory['name']; ?>" /><br />
+    <input type="text" name="name" value="<?php echo h($territory['name']); ?>" /><br />
     Position:<br />
-    <input type="text" name="position" value="<?php echo $territory['position']; ?>" /><br />
+    <input type="text" name="position" value="<?php echo h($territory['position']); ?>" /><br />
     <br />
     <input type="submit" name="submit" value="Create"  />
   </form>

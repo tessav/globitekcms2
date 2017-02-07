@@ -27,28 +27,28 @@ if(!isset($_GET['id'])) {
 }
 
 ?>
-<?php $page_title = 'Staff: Edit State ' . $state['name']; ?>
+<?php $page_title = 'Staff: Edit State ' . h($state['name']); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <div id="main-content">
   <a href="index.php">Back to States List</a><br />
 
-  <h1>Edit State: <?php echo $state['name']; ?></h1>
+  <h1>Edit State: <?php echo h($state['name']); ?></h1>
 
   <?php echo display_errors($errors); ?>
 
   <form action="edit.php" method="post">
-    <input type="hidden" name="id" value="<?php echo $state['id'];?>" />
+    <input type="hidden" name="id" value="<?php echo h($state['id']);?>" />
     Name:<br />
-    <input type="text" name="name" value="<?php echo $state['name']; ?>" /><br />
+    <input type="text" name="name" value="<?php echo h($state['name']); ?>" /><br />
     Code:<br />
-    <input type="text" name="code" value="<?php echo $state['code']; ?>" /><br />
+    <input type="text" name="code" value="<?php echo h($state['code']); ?>" /><br />
     Country:<br />
-    <input type="text" name="country_id" value="<?php echo $state['country_id']; ?>" /><br />
+    <input type="text" name="country_id" value="<?php echo h($state['country_id']); ?>" /><br />
     <br />
     <input type="submit" name="submit" value="Update"  />
   </form><br>
-  <a href="show.php?id=<?php echo $state['id'];?>">Cancel</a><br />
+  <a href="show.php?id=<?php echo h($state['id']);?>">Cancel</a><br />
 
 </div>
 

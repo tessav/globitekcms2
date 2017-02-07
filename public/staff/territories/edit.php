@@ -13,7 +13,7 @@ if(!isset($_GET['id'])) {
 
     $result = update_territory($territory);
     if($result === true) {
-      redirect_to('show.php?id=' . $territory['id']);
+      redirect_to('show.php?id=' . h($territory['id']));
     } else {
       $errors = $result;
     }
@@ -26,27 +26,27 @@ $territories_result = find_territory_by_id($_GET['id']);
 $territory = db_fetch_assoc($territories_result);
 
 ?>
-<?php $page_title = 'Staff: Edit Territory ' . $territory['name']; ?>
+<?php $page_title = 'Staff: Edit Territory ' . h($territory['name']); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <div id="main-content">
-  <a href="../states/show.php?id=<?php echo $territory['state_id']; ?>">Back to State Details</a><br />
+  <a href="../states/show.php?id=<?php echo h($territory['state_id']); ?>">Back to State Details</a><br />
 
-  <h1>Edit Territory: <?php echo $territory['name']; ?></h1>
+  <h1>Edit Territory: <?php echo h($territory['name']); ?></h1>
 
   <?php echo display_errors($errors); ?>
 
   <form action="edit.php" method="post">
-    <input type="hidden" name="id" value="<?php echo $territory['id'];?>" />
-    <input type="hidden" name="state_id" value="<?php echo $territory['state_id'];?>" />
+    <input type="hidden" name="id" value="<?php echo h($territory['id']);?>" />
+    <input type="hidden" name="state_id" value="<?php echo h($territory['state_id']);?>" />
     Name:<br />
-    <input type="text" name="name" value="<?php echo $territory['name']; ?>" /><br />
+    <input type="text" name="name" value="<?php echo h($territory['name']); ?>" /><br />
     Position:<br />
-    <input type="text" name="position" value="<?php echo $territory['position']; ?>" /><br />
+    <input type="text" name="position" value="<?php echo h($territory['position']); ?>" /><br />
     <br />
     <input type="submit" name="submit" value="Update"  />
   </form><br>
-  <a href="show.php?id=<?php echo $territory['id'];?>">Cancel</a><br />
+  <a href="show.php?id=<?php echo h($territory['id']);?>">Cancel</a><br />
 
 </div>
 
