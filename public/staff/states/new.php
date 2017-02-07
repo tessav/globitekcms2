@@ -44,7 +44,6 @@ if(is_post_request()) {
     <br />
     <input type="submit" name="submit" value="Create"  />
   </form>
-  <!-- TODO add form -->
 
 </div>
 

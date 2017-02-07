@@ -35,7 +35,7 @@ $state = db_fetch_assoc($state_result);
     echo "</table>";
 ?>
     <br />
-    <a href="edit.php">Edit</a><br />
+    <a href="edit.php?id=<?php echo $id; ?>">Edit</a><br />
     <hr />
 
     <h2>Territories</h2>
