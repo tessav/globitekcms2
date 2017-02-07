@@ -45,7 +45,22 @@
   }
 
   function validate_state($state, $errors=array()) {
-    // TODO add validations
+
+    if (is_blank($state['name'])) {
+      $errors[] = "State name cannot be blank.";
+    } elseif (!has_length($state['name'], array('min' => 2, 'max' => 255))) {
+      $errors[] = "State name must be between 2 and 255 characters.";
+    }
+
+    if (is_blank($state['country_id'])) {
+      $errors[] = "Country ID cannot be blank.";
+    }
+
+    if (is_blank($state['code'])) {
+      $errors[] = "State code cannot be blank.";
+    } elseif (!has_length($state['code'], array('min'=>2, 'max' => 2))) {
+      $errors[] = "State code must be 2 characters.";
+    }
 
     return $errors;
   }
@@ -65,7 +80,7 @@
     $sql .= "VALUES (";
     $sql .= "'" . $state['name'] . "',";
     $sql .= "'" . $state['code'] . "',";
-    $sql .= "'" . $state['country'] . "'";
+    $sql .= "'" . $state['country_id'] . "'";
     $sql .= ");";
     // For INSERT statments, $result is just true/false
     $result = db_query($db, $sql);
@@ -142,7 +157,15 @@
   }
 
   function validate_territory($territory, $errors=array()) {
-    // TODO add validations
+    if (is_blank($territory['name'])) {
+      $errors[] = "Territory name cannot be blank.";
+    } elseif (!has_length($territory['name'], array('min' => 2, 'max' => 255))) {
+      $errors[] = "Territory name must be between 2 and 255 characters.";
+    }
+
+    if (is_blank($territory['position'])) {
+      $errors[] = "Position cannot be blank.";
+    }
 
     return $errors;
   }

@@ -24,16 +24,16 @@ The following **required** functionality is completed:
 
 6\. [X]  Required: Complete Staff CMS for Territories
   * [X]  Required: index.php
-  * [ ]  Required: show.php
+  * [X]  Required: show.php
   * [X]  Required: new.php
-  * [ ]  Required: edit.php
+  * [X]  Required: edit.php
 
 7\. [ ]  Required: Add Data Validations
-  * [ ]  Required: Validate that no values are left blank.
-  * [ ]  Required: Validate that all string values are less than 255 characters.
+  * [X]  Required: Validate that no values are left blank.
+  * [X]  Required: Validate that all string values are less than 255 characters.
   * [ ]  Required: Validate that usernames contain only the whitelisted characters.
   * [ ]  Required: Validate that phone numbers contain only the whitelisted characters.
-  * [ ]  Required: Validate that email addresses contain only whitelisted characters.
+  * [X]  Required: Validate that email addresses contain only whitelisted characters.
   * [ ]  Required: Add *at least 5* other validations of your choosing.
 
 8\. [ ]  Required: Sanitization

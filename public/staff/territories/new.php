@@ -19,16 +19,17 @@ if(!isset($_GET['id'])) {
   } else {
     redirect_to('index.php');
   }
+} else {
+
+  $id = $_GET['id'];
+
+  $errors = array();
+  $territory = array(
+    'name' => '',
+    'position' => '',
+    'state_id' => ''.$id.'',
+  );
 }
-$id = $_GET['id'];
-
-$errors = array();
-$territory = array(
-  'name' => '',
-  'position' => '',
-  'state_id' => ''.$id.'',
-);
-
 
 ?>
 <?php $page_title = 'Staff: New Territory'; ?>
