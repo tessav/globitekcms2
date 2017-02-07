@@ -13,7 +13,7 @@ $territory = db_fetch_assoc($territories_result);
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <div id="main-content">
-  <a href="#add_a_url">Back to State Details</a><br />
+  <a href="../states/show.php?id=<?php echo $territory['state_id']; ?>">Back to State Details</a><br />
 
   <h1>Edit Territory: <?php echo $territory['name']; ?></h1>
 
