@@ -25,7 +25,7 @@ The following **required** functionality is completed:
 6\. [X]  Required: Complete Staff CMS for Territories
   * [X]  Required: index.php
   * [ ]  Required: show.php
-  * [ ]  Required: new.php
+  * [X]  Required: new.php
   * [ ]  Required: edit.php
 
 7\. [ ]  Required: Add Data Validations
