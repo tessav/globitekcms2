@@ -22,6 +22,9 @@ if(!isset($_GET['id'])) {
   }
 } else {
   $states_result = find_state_by_id(u($_GET['id']));
+  if ($states_result->num_rows == 0) {
+    redirect_to('index.php');
+  }
   // No loop, only one result
   $state = db_fetch_assoc($states_result);
 }

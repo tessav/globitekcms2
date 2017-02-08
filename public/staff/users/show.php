@@ -6,6 +6,9 @@ if(!isset($_GET['id'])) {
 }
 $id = $_GET['id'];
 $users_result = find_user_by_id(u($id));
+if ($users_result->num_rows == 0) {
+  redirect_to('index.php');
+}
 // No loop, only one result
 $user = db_fetch_assoc($users_result);
 ?>

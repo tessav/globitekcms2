@@ -5,6 +5,9 @@ if(!isset($_GET['id'])) {
   redirect_to('index.php');
 }
 $salesperson_result = find_salesperson_by_id(u($_GET['id']));
+if ($salesperson_result->num_rows == 0) {
+  redirect_to('index.php');
+}
 // No loop, only one result
 $salesperson = db_fetch_assoc($salesperson_result);
 

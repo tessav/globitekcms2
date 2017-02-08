@@ -6,6 +6,10 @@ if(!isset($_GET['id'])) {
 }
 $id = $_GET['id'];
 $state_result = find_state_by_id(u($id));
+
+if ($state_result->num_rows == 0) {
+  redirect_to('index.php');
+}
 // No loop, only one result
 $state = db_fetch_assoc($state_result);
 ?>

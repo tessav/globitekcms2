@@ -6,6 +6,10 @@ if(!isset($_GET['id'])) {
 }
 $id = $_GET['id'];
 $territory_result = find_territory_by_id(u($id));
+
+if ($territory_result->num_rows == 0) {
+  redirect_to('index.php');
+}
 // No loop, only one result
 $territory = db_fetch_assoc($territory_result);
 $state_id = $territory['state_id'];
