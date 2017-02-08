@@ -55,9 +55,11 @@ The following **required** functionality is completed:
 Here's a walkthrough of implemented user stories:
 <br>
 <br>
-<b>Sanitization of HTML output, MySQL string escape</b><br>
-
+<b>1. Sanitization of HTML output, MySQL string escape</b><br>
 <img src='http://i.imgur.com/daPeyD9.gif?1' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<br>
+<b>2. Sanitization of form input and output for XSS and SQLI vulnerability</b><br>
+<img src='http://i.imgur.com/30IoDJI.gif?1' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 
