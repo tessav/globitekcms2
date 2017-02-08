@@ -21,7 +21,7 @@ if(!isset($_GET['id'])) {
     redirect_to('index.php');
   }
 }
-$territories_result = find_territory_by_id($_GET['id']);
+$territories_result = find_territory_by_id(u($_GET['id']));
 // No loop, only one result
 $territory = db_fetch_assoc($territories_result);
 

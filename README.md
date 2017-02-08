@@ -42,25 +42,12 @@ The following **required** functionality is completed:
   * [X]  Required: Sanitize dynamic data for HTML
   * [X]  Required: Sanitize dynamic data for SQL
 
-9\. [ ]  Required: Penetration Testing
-  * [ ]  Required: Verify form inputs are not vulnerable to SQLI attacks.
-  * [ ]  Required: Verify query strings are not vulnerable to SQLI attacks.
-  * [ ]  Required: Verify form inputs are not vulnerable to XSS attacks.
-  * [ ]  Required: Verify query strings are not vulnerable to XSS attacks.
-  * [ ]  Required: Listed other bugs or security vulnerabilities
-
-
-The following advanced user stories are optional:
-
-- [ ]  Bonus: On "public/staff/territories/show.php", display the name of the state.
-
-- [ ]  Bonus: Validate the uniqueness of `users.username`.
-
-- [ ]  Bonus: Add a page for "public/staff/users/delete.php".
-
-- [ ]  Bonus: Add a Staff CMS for countries.
-
-- [ ]  Advanced: Nest the CMS for states inside of the Staff CMS for countries
+9\. [X]  Required: Penetration Testing
+  * [X]  Required: Verify form inputs are not vulnerable to SQLI attacks.
+  * [X]  Required: Verify query strings are not vulnerable to SQLI attacks.
+  * [X]  Required: Verify form inputs are not vulnerable to XSS attacks.
+  * [X]  Required: Verify query strings are not vulnerable to XSS attacks.
+  * [X]  Required: Listed other bugs or security vulnerabilities
 
 
 ## Video Walkthrough
