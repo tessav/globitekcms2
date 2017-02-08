@@ -58,10 +58,10 @@ Here's a walkthrough of implemented user stories:
 <b>1. Sanitization of HTML output, MySQL string escape</b><br><br>
 <img src='http://i.imgur.com/daPeyD9.gif?1' title='Video Walkthrough 1' width='' alt='Video Walkthrough 1' />
 <br>
-<b>2. Sanitization of form input and output for XSS and SQLI vulnerability</b><br><br>
+<b>2. XSS and SQLI vulnerability: Sanitization of form input and output</b><br><br>
 <img src='http://i.imgur.com/30IoDJI.gif?1' title='Video Walkthrough 2' width='' alt='Video Walkthrough 2' />
 <br>
-<b>3. Sanitization of query for XSS and SQLI vulnerability</b><br><br>
+<b>3. XSS and SQLI vulnerability: Sanitization of query</b><br><br>
 <img src='http://i.imgur.com/liBJdDi.gif?1' title='Video Walkthrough 3' width='' alt='Video Walkthrough 3' />
 
 
